@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { -webkit-tap-highlight-color: transparent; }
+  body { @apply antialiased; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+  html { scroll-behavior: smooth; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm;
+  }
+  .btn-primary {
+    @apply w-full py-3.5 rounded-xl font-semibold text-white transition-all active:scale-95 disabled:opacity-60;
+    background: linear-gradient(135deg, #085041, #1D9E75);
+  }
+  .btn-secondary {
+    @apply w-full py-3 rounded-xl font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 transition-all active:scale-95;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-eco-400 focus:ring-2 focus:ring-eco-100 outline-none text-sm transition-all bg-gray-50 focus:bg-white;
+  }
+}
+
+@layer utilities {
+  .fade-in { animation: fadeIn 0.3s ease-in-out; }
+  .slide-up { animation: slideUp 0.3s ease-out; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
